@@ -46,6 +46,7 @@ const App = () => {
           Submit
         </button>
         <pre>{code}</pre>
+        <iframe src="test.html" />
       </div>
     </div>
   );

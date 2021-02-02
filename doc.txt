@@ -45,3 +45,6 @@ document.querySelector('input').addEventListener('change', (event) => {
 for (var i = 0; i < 9999999999; i++) {
     console.log(i);
 }
+
+solution --iframes
+localhost:3000/test.html
