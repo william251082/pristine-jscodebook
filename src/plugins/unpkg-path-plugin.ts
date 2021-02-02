@@ -33,8 +33,8 @@ export const unpkgPathPlugin = () => {
             loader: 'jsx',
             contents: `
               import lodash from 'lodash';
-              import {useState} from 'react';
-              const react = require('react');
+              import {useState} from 'react@16.0.0';
+              const react = require('react@16.0.0');
               const reactDOM = require('react-dom');
               console.log(react, reactDOM, lodash);
             `,
