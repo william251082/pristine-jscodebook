@@ -46,7 +46,7 @@ const App = () => {
           Submit
         </button>
         <pre>{code}</pre>
-        <iframe src="test.html" />
+        <iframe sandbox="allow-same-origin" src="test.html" />
       </div>
     </div>
   );
