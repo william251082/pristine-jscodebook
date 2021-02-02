@@ -6,19 +6,9 @@ const fileCache = localForage.createInstance({
   name: 'filecache'
 });
 
-// TEST
-// (async () => {
-//   await fileCache.setItem('color', 'red');
-//
-//   const color = await fileCache.getItem('color');
-//
-//   console.log(color)
-// })();
-
-export const unpkgPathPlugin = () => {
+export const unpkgPathPlugin = (inputCode: string) => {
   return {
     name: 'unpkg-path-plugin',
-    // override esbuild's natural behavior
     setup(build: esbuild.PluginBuild) {
       build.onResolve({filter: /.*/}, async (args: any) => {
         console.log('onResolve', args);
@@ -45,22 +35,12 @@ export const unpkgPathPlugin = () => {
         if (args.path === 'index.js') {
           return {
             loader: 'jsx',
-            contents: `
-              import lodash from 'lodash';
-              import {useState} from 'react';
-              const react = require('react');
-              const reactDOM = require('react-dom');
-              console.log(react, reactDOM, lodash);
-            `,
+            contents: inputCode,
           };
         }
 
-        // Check to see if we have already fetched this
-        // and if it is in the cache
-        // getItem is a generic function, describe the type that getItem would return
         const cachedResult = await fileCache.getItem<esbuild.OnLoadResult>(args.path);
 
-        // if it is, return it immediately
         if (cachedResult) {
           return cachedResult
         }
@@ -74,7 +54,6 @@ export const unpkgPathPlugin = () => {
           resolveDir: new URL('./', request.responseURL).pathname
         };
 
-        // store response in cache
         await fileCache.setItem(args.path, result);
 
         return result;
