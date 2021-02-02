@@ -22,7 +22,7 @@ const App = () => {
     if (!ref.current) {
       return;
     }
-    // transpile code input
+    // transpile code input --only on the browser
    const result = await ref.current.transform(input, {
      loader: 'jsx',
      target: 'es2015'
