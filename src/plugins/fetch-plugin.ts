@@ -21,8 +21,6 @@ export const fetchPlugin = (inputCode: string) => {
         if (cachedResult) {
           return cachedResult
         }
-        // console.log('I ran but did nothing');
-        // return null;
       });
       build.onLoad({filter: /.css$/}, async (args: any) => {
         const {data, request} = await axios.get(args.path);

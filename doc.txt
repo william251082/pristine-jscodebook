@@ -25,3 +25,5 @@ import 'bulma/css/bulma.css';
 test
 import 'tiny-test-pkg';
 import 'bulma/css/bulma.css';
+
+https://unpkg.com/esbuild-wasm@0.8.27/esbuild.wasm
