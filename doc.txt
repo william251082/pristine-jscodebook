@@ -21,3 +21,6 @@ yarn add localforage
 
 import 'bulma/css/bulma.css';
 'https://unpkg.com/bulma/css/bulma.css'.match(/.css$/)
+
+test
+import 'tiny-test-pkg';
