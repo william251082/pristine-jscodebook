@@ -19,5 +19,5 @@ extract request.responseURL
 yarn add localforage
 
 
-import bulma/css/bulma.css
+import 'bulma/css/bulma.css';
 'https://unpkg.com/bulma/css/bulma.css'.match(/.css$/)
