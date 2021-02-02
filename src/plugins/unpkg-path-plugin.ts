@@ -3,9 +3,10 @@ import * as esbuild from 'esbuild-wasm';
 export const unpkgPathPlugin = () => {
   return {
     name: 'unpkg-path-plugin',
+    // override esbuild's natural behavior
     setup(build: esbuild.PluginBuild) {
       build.onResolve({filter: /.*/}, async (args: any) => {
-        console.log('onResole', args);
+        console.log('onResolve', args);
         return {path: args.path, namespace: 'a'};
       });
 
