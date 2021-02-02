@@ -9,3 +9,7 @@ unpkg.com/:package@:version/:file
 https://unpkg.com/tiny-test-pkg@1.0.0/index.js
 yarn add axios
 https://unpkg.com/medium-test-pkg@1.0.0/index.js
+
+new URL = for setting path on the browser
+run on browser:
+new URL('./utils', 'https://unpkg.com/medium-test-pkg');
