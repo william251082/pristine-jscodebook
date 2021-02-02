@@ -24,3 +24,4 @@ import 'bulma/css/bulma.css';
 
 test
 import 'tiny-test-pkg';
+import 'bulma/css/bulma.css';
