@@ -6,6 +6,7 @@ import {unpkgPathPlugin} from "./plugins/unpkg-path-plugin";
 
 const App = () => {
   const ref = useRef<any>();
+  const iframe = useRef<any>();
   const [input, setInput] = useState('');
   const [code, setCode] = useState('');
 
@@ -24,23 +25,33 @@ const App = () => {
     if (!ref.current) {
       return;
     }
-   const result = await ref.current.build({
-     entryPoints: ['index.js'],
-     bundle: true,
-     write: false,
-     plugins: [unpkgPathPlugin(), fetchPlugin(input)],
-     define: {
-       'process.env.NODE_ENV': '"production"',
-       global: 'window'
-     }
-   });
-    setCode(result.outputFiles[0].text);
+    const result = await ref.current.build({
+      entryPoints: ['index.js'],
+      bundle: true,
+      write: false,
+      plugins: [unpkgPathPlugin(), fetchPlugin(input)],
+      define: {
+        'process.env.NODE_ENV': '"production"',
+        global: 'window'
+      }
+    });
+    // setCode(result.outputFiles[0].text);
+    iframe.current.contentWindow.postMessage(result.outputFiles[0].text, '*')
   };
 
   const html = `
-        <script>
-          ${code}
-        </script>
+        <html>
+            <head>
+                <body>
+                    <div id="root"></div>
+                    <script>
+                        window.addEventListener('message', (event) => {
+                            eval(event.data);
+                        }, false);
+                    </script>
+                </body>
+            </head>
+        </html>
     `;
 
   return (
@@ -51,7 +62,7 @@ const App = () => {
           Submit
         </button>
         <pre>{code}</pre>
-        <iframe sandbox="allow-scripts" srcDoc={html} />
+        <iframe ref={iframe} sandbox="allow-scripts" srcDoc={html}/>
       </div>
     </div>
   );
