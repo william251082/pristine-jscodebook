@@ -48,3 +48,8 @@ for (var i = 0; i < 9999999999; i++) {
 
 solution --iframes
 localhost:3000/test.html
+
+accessing parent DOM from child iframe
+parent.a
+accessing child iframe from parent DOM
+document.querySelector('iframe').contentWindow.b
