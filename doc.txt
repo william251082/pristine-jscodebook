@@ -6,4 +6,5 @@ Problem:
 Solution:
 -- unpkg - public cdn that contains all the source code hosted on npm
 unpkg.com/:package@:version/:file
-unpkg.com/:tiny-test@:1.0.0/:index.js
+https://unpkg.com/tiny-test-pkg@1.0.0/index.js
+yarn add axios
