@@ -13,3 +13,5 @@ https://unpkg.com/medium-test-pkg@1.0.0/index.js
 new URL = for setting path on the browser
 run on browser:
 new URL('./utils', 'https://unpkg.com/medium-test-pkg');
+
+extract request.responseURL
