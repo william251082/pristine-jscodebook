@@ -46,10 +46,14 @@ const App = () => {
           Submit
         </button>
         <pre>{code}</pre>
-        <iframe src="http://nothing.localhost:3000/test.html" />
+        <iframe sandbox="" srcDoc={html} />
       </div>
     </div>
   );
 };
+
+const html = `
+    <h1>Local HTML doc</h1>
+`;
 
 ReactDOM.render(<App/>, document.querySelector('#root'));
