@@ -65,3 +65,11 @@ test on code form:
 // args = message string and host
 parent.postMessage('hi', '*');
 MessageEvent.data
+
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+const App = () => <h1>Hi</h1>;
+
+ReactDOM.render(<App/>, document.querySelector('#root'));

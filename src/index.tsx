@@ -41,16 +41,15 @@ const App = () => {
 
   const html = `
         <html>
-            <head>
-                <body>
-                    <div id="root"></div>
-                    <script>
-                        window.addEventListener('message', (event) => {
-                            eval(event.data);
-                        }, false);
-                    </script>
-                </body>
-            </head>
+            <head></head>
+            <body>
+                <div id="root"></div>
+                <script>
+                    window.addEventListener('message', (event) => {
+                        eval(event.data);
+                    }, false);
+                </script>
+            </body>
         </html>
     `;
 
