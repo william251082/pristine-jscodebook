@@ -56,3 +56,12 @@ document.querySelector('iframe').contentWindow.b
 
 /etc/hosts
 127.0.0.1 nothing.localhost
+
+on parent DOM
+window.addEventListener('message', (event) => console.log(event), false);
+
+test on code form:
+// post message from child to parent
+// args = message string and host
+parent.postMessage('hi', '*');
+MessageEvent.data
