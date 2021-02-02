@@ -1,0 +1,8 @@
+-- download react package source code
+npm view react dist.tarball
+
+Problem:
+-- can't fetch from the browser
+Solution:
+-- unpkg - public cdn that contains all the source code hosted on npm
+unpkg.com/:package@:version/:file
