@@ -15,3 +15,5 @@ run on browser:
 new URL('./utils', 'https://unpkg.com/medium-test-pkg');
 
 extract request.responseURL
+
+yarn add localforage
