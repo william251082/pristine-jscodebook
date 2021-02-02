@@ -53,3 +53,6 @@ accessing parent DOM from child iframe
 parent.a
 accessing child iframe from parent DOM
 document.querySelector('iframe').contentWindow.b
+
+/etc/hosts
+127.0.0.1 nothing.localhost
