@@ -84,3 +84,6 @@ document.querySelector('iframe').srcdoc = 'a'
 
 test: submit this and see if iframe contents are recreated
 console.log(document.querySelector('#root'))
+
+yarn add @monaco-editor/react@3.7.5
+yarn add monaco-editor
