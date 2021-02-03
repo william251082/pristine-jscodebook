@@ -34,7 +34,13 @@ const Preview: FC<PreviewProps> = ({code}) => {
   }, [code]);
 
   return (
-    <iframe title="preview" ref={iframe} sandbox="allow-scripts" srcDoc={html}/>
+    <iframe
+      style={{backgroundColor: 'white'}}
+      title="preview"
+      ref={iframe}
+      sandbox="allow-scripts"
+      srcDoc={html}
+    />
   );
 };
 
