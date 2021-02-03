@@ -17,7 +17,7 @@ const App = () => {
   useEffect(() => {
     startService();
   }, []);
-  const onClick = async () => {
+  const onClick = async (input: string) => {
     if (!ref.current) {
       return;
     }
@@ -55,13 +55,13 @@ const App = () => {
     `;
   return (
     <div>
-      <textarea value={input} onChange={e => setInput(e.target.value)}></textarea>
+      <textarea value={input} onChange={(e) => {
+        onClick(e.target.value);
+        setInput(e.target.value);
+      }}></textarea>
       <div>
-        <button onClick={onClick}>
-          Submit
-        </button>
-        <iframe title="preview" ref={iframe} sandbox="allow-scripts" srcDoc={html}/>
       </div>
+      <iframe title="preview" ref={iframe} sandbox="allow-scripts" srcDoc={html}/>
     </div>
   );
 };
