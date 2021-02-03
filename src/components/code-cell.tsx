@@ -20,8 +20,8 @@ const CodeCell = () => {
             initialValue="console.log(123)"
             onChange={(value) => setInput(value)}
           />
-          <Preview code={code} />
         </Resizable>
+        <Preview code={code} />
       </div>
     </Resizable>
 
