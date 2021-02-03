@@ -70,7 +70,16 @@ MessageEvent.data
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const App = () => <h1>Hi</h1>;
+const App = () => {
+  return (
+    <div>
+      <h1>Hi</h1>
+      <button onClick={() => console.log('click')}>
+        Click me
+      </button>
+    </div>
+  );
+}
 
 ReactDOM.render(<App/>, document.querySelector('#root'));
 
@@ -90,3 +99,7 @@ yarn add monaco-editor
 yarn add prettier @types/prettier
 
 yarn add bulmaswatch
+
+yarn add monaco-jsx-highlighter@0.0.15 jscodeshift@0.11.0 @types/jscodeshift@0.7.2
+
+whenever monaco editor is running, monaco will automatically add window.monaco, ts doesn't know about this
