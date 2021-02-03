@@ -80,3 +80,7 @@ document.body.innerHTML = '';
 this delete the children of body tag in the iframe, next code won't work anymore
 
 Solution: make sure to reload the default iframe contents on every code execution
+document.querySelector('iframe').srcdoc = 'a'
+
+test: submit this and see if iframe contents are recreated
+console.log(document.querySelector('#root'))
