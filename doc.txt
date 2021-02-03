@@ -73,3 +73,10 @@ import ReactDOM from 'react-dom';
 const App = () => <h1>Hi</h1>;
 
 ReactDOM.render(<App/>, document.querySelector('#root'));
+
+
+Problem: if user do this on form:
+document.body.innerHTML = '';
+this delete the children of body tag in the iframe, next code won't work anymore
+
+Solution: make sure to reload the default iframe contents on every code execution
