@@ -105,3 +105,6 @@ yarn add monaco-jsx-highlighter@0.0.15 jscodeshift@0.11.0 @types/jscodeshift@0.7
 whenever monaco editor is running, monaco will automatically add window.monaco, ts doesn't know about this
 
 yarn add react-resizable@1.11.0 @types/react-resizable@1.7.2
+
+
+Problem: Resizable width prop overwrites ResizableBox internal width state
