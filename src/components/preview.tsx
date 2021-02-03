@@ -35,7 +35,9 @@ const Preview: FC<PreviewProps> = ({code}) => {
   // whenever there's new code, look at iframe, reset html
   useEffect(() => {
     iframe.current.srcdoc = html;
-    iframe.current.contentWindow.postMessage(code, '*')
+    setTimeout(() => {
+      iframe.current.contentWindow.postMessage(code, '*')
+    }, 50);
   }, [code]);
 
   return (

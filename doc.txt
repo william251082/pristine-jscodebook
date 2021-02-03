@@ -111,3 +111,13 @@ Problem: Resizable width prop overwrites ResizableBox internal width state
 
 
 debouncing --allows some function to run as much as possible after when some period of time elapses
+
+bug:
+const root = document.querySelector('#ropot')
+root.innerHTML = 'asdf' // 'asdf' appears for a fraction of a second
+
+because of this
+useEffect(() => {
+    iframe.current.srcdoc = html; // after setting html
+    iframe.current.contentWindow.postMessage(code, '*') // posting message immediately
+  }, [code]);
