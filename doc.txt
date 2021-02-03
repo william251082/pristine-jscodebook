@@ -108,3 +108,6 @@ yarn add react-resizable@1.11.0 @types/react-resizable@1.7.2
 
 
 Problem: Resizable width prop overwrites ResizableBox internal width state
+
+
+debouncing --allows some function to run as much as possible after when some period of time elapses
