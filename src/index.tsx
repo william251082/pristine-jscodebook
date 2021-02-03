@@ -4,6 +4,7 @@ import {useEffect, useRef, useState} from "react";
 import {fetchPlugin} from "./plugins/fetch-plugin";
 import {unpkgPathPlugin} from "./plugins/unpkg-path-plugin";
 import CodeEditor from "./components/code-editor";
+import 'bulmaswatch/cyborg/bulmaswatch.min.css';
 
 const App = () => {
   const ref = useRef<any>();

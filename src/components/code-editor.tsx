@@ -16,7 +16,6 @@ const CodeEditor: React.FC<CodeEditorProps> = ({onChange, initialValue}) => {
     monacoEditor.onDidChangeModelContent(() => {
       onChange(getValue());
     });
-
     monacoEditor.getModel()?.updateOptions({ tabSize: 2 });
   };
   const onFormatClick = () => {
@@ -37,7 +36,12 @@ const CodeEditor: React.FC<CodeEditorProps> = ({onChange, initialValue}) => {
 
   return (
     <div>
-      <button onClick={onFormatClick}>Format</button>
+      <button
+        className="button button-format is-primary is-small"
+        onClick={onFormatClick}
+      >
+        Format
+      </button>
       <MonacoEditor
         editorDidMount={onEditorDidMount}
         value={initialValue}

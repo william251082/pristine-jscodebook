@@ -88,3 +88,5 @@ console.log(document.querySelector('#root'))
 yarn add @monaco-editor/react@3.7.5
 yarn add monaco-editor
 yarn add prettier @types/prettier
+
+yarn add bulmaswatch
