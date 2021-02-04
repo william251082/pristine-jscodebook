@@ -5,17 +5,15 @@ import "./text-editor.css";
 const TextEditor: FC = () => {
   const ref = useRef<HTMLDivElement | null>(null);
   const [editing, setEditing] = useState(false);
+  const [value, setValue] = useState('# Header');
 
   useEffect(() => {
     const listener = (event: MouseEvent) => {
       if (ref.current && 
         event.target && 
         ref.current.contains(event.target as Node)) {
-        console.log('element clicked on inside the editor');
         return;
       }
-      console.log('element not clicked on inside the editor');
-      console.log(event.target);
       setEditing(false);
     };
     document.addEventListener('click', listener, {capture: true});
@@ -27,14 +25,14 @@ const TextEditor: FC = () => {
   if (editing) {
     return (
       <div ref={ref}>
-        <MDEditor />
+        <MDEditor value={value} onChange={(v) => {setValue(v || '')}} />
       </div>
     )
   }
 
   return (
     <div onClick={() => setEditing(true)}>
-      <MDEditor.Markdown source={'# Header'} />
+      <MDEditor.Markdown source={value} />
     </div>
   );
 };
