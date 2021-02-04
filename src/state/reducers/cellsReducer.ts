@@ -1,6 +1,7 @@
-import {Cell} from "../../cell";
+
 import {Action} from "../actions";
 import {ActionType} from "../action-types";
+import {Cell} from "../cell";
 
 interface CellsState {
   loading: boolean;
