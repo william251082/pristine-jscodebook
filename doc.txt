@@ -127,3 +127,8 @@ Error handling:
 -- when bundling an invalid code
 -- invalid characters
 -- async errors
+
+test async error handling:
+setTimeout(() => {
+  sfdsf.sdfsdf()
+}, 100)
