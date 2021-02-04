@@ -136,3 +136,9 @@ setTimeout(() => {
 
 Markdown editor
 yarn add @uiw/react-md-editor@2.1.1
+
+bug:
+cursor is broken because of the css class name clash between bulma and markdown editor
+solution:
+don't use css classname title from bulma, create a separate css file for text-editor
+
