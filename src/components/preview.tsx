@@ -3,6 +3,7 @@ import "./preview.css"
 
 interface PreviewProps {
   code: string;
+  err: string;
 }
 
 const html = `
@@ -37,7 +38,7 @@ const html = `
         </html>
     `;
 
-const Preview: FC<PreviewProps> = ({code}) => {
+const Preview: FC<PreviewProps> = ({code, err}) => {
   const iframe = useRef<any>();
 
   // whenever there's new code, look at iframe, reset html
@@ -56,6 +57,7 @@ const Preview: FC<PreviewProps> = ({code}) => {
         sandbox="allow-scripts"
         srcDoc={html}
       />
+      {err && <div className="preview-error">{err}</div>}
     </div>
   );
 };
