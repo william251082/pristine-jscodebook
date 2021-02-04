@@ -121,3 +121,9 @@ useEffect(() => {
     iframe.current.srcdoc = html; // after setting html
     iframe.current.contentWindow.postMessage(code, '*') // posting message immediately
   }, [code]);
+
+
+Error handling:
+-- when bundling an invalid code
+-- invalid characters
+-- async errors
