@@ -1,9 +1,14 @@
 import {FC} from "react";
+import {Cell} from "../state";
 
-const CellListItem: FC = () => {
+interface CellListItemProps {
+  cell: Cell
+}
+
+const CellListItem: FC<CellListItemProps> = ({cell}) => {
   return (
     <div>
-      Cell List Item
+      {cell.id}
     </div>
   )
 };
