@@ -142,3 +142,10 @@ cursor is broken because of the css class name clash between bulma and markdown 
 solution:
 don't use css classname title from bulma, create a separate css file for text-editor
 
+
+test on md editor:
+Header
+
+- Add
+- Additional themes
+- And Stuff
