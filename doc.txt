@@ -157,3 +157,13 @@ yarn add @types/react-redux@7.1.15 react-redux@7.2.2 redux@4.0.5 redux-thunk@2.3
 yarn add immer
 
 yarn add @fortawesome/fontawesome-free
+
+bug:
+whenever you put createBundle on dependency array of useEffect the preview component blink
+
+-- everytime you call useActions,
+you're creating a different version of createBundle,
+it will be an infinite loop of createBundle->useActions->useEffect
+
+Solution:
+useMemo -- only bind the actionCreators one single time

@@ -21,7 +21,7 @@ const CodeCell: FC<CodeCellProps> = ({cell}) => {
     return () => {
       clearTimeout(timer)
     };
-  }, [cell.id, cell.content]);
+  }, [cell.id, cell.content, createBundle]);
 
   return (
     <Resizable direction="vertical">
