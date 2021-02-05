@@ -21,8 +21,12 @@ const CodeCell: FC<CodeCellProps> = ({cell}) => {
     const cumulativeCode = [
       `
         const show = (value) => {
+        if (typeof value === 'object') {
+          document.querySelector('#root').innerHTML = JSON.stringify(value);
+        } else {
           document.querySelector('#root').innerHTML = value;
-        }
+          }
+        };
       `
     ];
     for (let c of orderedCells) {
@@ -35,7 +39,7 @@ const CodeCell: FC<CodeCellProps> = ({cell}) => {
     }
     return cumulativeCode;
   });
-  console.log(cumulativeCode);
+  // console.log(cumulativeCode);
 
   useEffect(() => {
     if (!bundle) {
