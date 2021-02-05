@@ -200,3 +200,12 @@ import ReactDOM from 'react-dom';
 show(<div>ghgsdfgghs</div>)
 show([{1: 'k'}])
 show('dfgdf')
+
+npm install -g --save-exact lerna@3.22.1
+/jbook/pakages/local-client
+
+lerna add commander --scope=cli
+lerna add local-api --scope=cli
+
+/cli$ node index.js
+

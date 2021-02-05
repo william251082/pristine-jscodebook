@@ -23,3 +23,7 @@ yarn-debug.log*
 yarn-error.log*
 .idea
 .vscode
+
+jbook/packages/cli/node_modules
+jbook/packages/local-api/node_modules
+jbook/packages/local-client/node_modules
