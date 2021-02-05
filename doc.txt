@@ -167,3 +167,30 @@ it will be an infinite loop of createBundle->useActions->useEffect
 
 Solution:
 useMemo -- only bind the actionCreators one single time
+
+
+TEST FOR TEXTAREA
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+const App = () => {
+  return (
+    <div>
+      <h1>Hi</h1>
+      <button onClick={() => console.log('click')}>
+        Click me
+      </button>
+    </div>
+  );
+}
+
+ReactDOM.render(<App/>, document.querySelector('#root'));
+
+document.querySelector('#root').innerHTML = 'rgsdfgsdf'
+
+import axios from 'axios'
+
+const fetPosts = async () => {
+const {data} = await axios.get('/posts');
+ return data;
+}
