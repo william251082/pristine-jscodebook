@@ -39,7 +39,7 @@ export const insertCellAfter = (id: string | null, type: CellTypes): InsertCellA
 };
 
 export const createBundle = (cellId: string, input: string) => {
-  return (dispatch: Dispatch<Action>) => {
+  return async (dispatch: Dispatch<Action>) => {
     dispatch({
       type: ActionType.BUNDLE_START,
       payload: {
@@ -47,7 +47,7 @@ export const createBundle = (cellId: string, input: string) => {
       }
     });
 
-    const result = await bundle(input);
+    const result = await bundle(input) ;
 
     dispatch({
       type: ActionType.BUNDLE_COMPLETE,
