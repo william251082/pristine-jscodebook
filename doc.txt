@@ -194,3 +194,9 @@ const fetPosts = async () => {
 const {data} = await axios.get('/posts');
  return data;
 }
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+show(<div>ghgsdfgghs</div>)
+show([{1: 'k'}])
+show('dfgdf')
