@@ -20,11 +20,14 @@ const CodeCell: FC<CodeCellProps> = ({cell}) => {
 
     const cumulativeCode = [
       `
+      import _React from 'react';
+      import _ReactDOM from 'react-dom';
+
         const show = (value) => {
           const root = document.querySelector('#root');
           if (typeof value === 'object') {
             if (value.$$typeof && value.props) {
-              ReactDOM.render(value, root);
+              _ReactDOM.render(value, root);
             } else {
               root.innerHTML = JSON.stringify(value);
             }
@@ -44,7 +47,6 @@ const CodeCell: FC<CodeCellProps> = ({cell}) => {
     }
     return cumulativeCode;
   });
-  // console.log(cumulativeCode);
 
   useEffect(() => {
     if (!bundle) {
