@@ -6,9 +6,9 @@ Problem:
 Solution:
 -- unpkg - public cdn that contains all the source code hosted on npm
 unpkg.com/:package@:version/:file
-https://unpkg.com/tiny-test-pkg@1.0.0/index.js
+https://unpkg.com/tiny-test-pkg@1.0.0/index.ts
 yarn add axios
-https://unpkg.com/medium-test-pkg@1.0.0/index.js
+https://unpkg.com/medium-test-pkg@1.0.0/index.ts
 
 new URL = for setting path on the browser
 run on browser:
@@ -207,5 +207,9 @@ npm install -g --save-exact lerna@3.22.1
 lerna add commander --scope=cli
 lerna add local-api --scope=cli
 
-/cli$ node index.js
+/cli$ node index.ts
 
+lerna add typescript --dev --scope=local-api
+
+/local-api$ npx typescript --init
+/local-api$ npm run start
