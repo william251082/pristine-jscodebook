@@ -213,3 +213,6 @@ lerna add typescript --dev --scope=local-api
 
 /local-api$ npx typescript --init
 /local-api$ npm run start
+
+/cli$ npx typescript --init
+/cli$ npm run start
