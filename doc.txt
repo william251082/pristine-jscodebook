@@ -228,3 +228,5 @@ jbook$ node test.js mynotes.js --port 3050
 /jbook$ lerna add http-proxy-middleware --scope=local-api
 
 local-client$ yarn build
+
+lerna add local-client --scope=local-api
