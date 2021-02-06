@@ -218,3 +218,5 @@ lerna add typescript --dev --scope=local-api
 /cli$ npm run start
 
 jbook$ node test.js mynotes.js --port 3050
+
+/jbook$ lerna add @types/node --dev --scope=cli
