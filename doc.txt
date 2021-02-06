@@ -226,3 +226,5 @@ jbook$ node test.js mynotes.js --port 3050
 /jbook$ lerna add cors --scope=local-api
 /jbook$ lerna add @types/cors --dev --scope=local-api
 /jbook$ lerna add http-proxy-middleware --scope=local-api
+
+local-client$ yarn build
