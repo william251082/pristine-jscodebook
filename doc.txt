@@ -234,3 +234,6 @@ lerna add local-client --scope=local-api
 
 tiny-npm-deploy % npm install typescript express @types/express
 tiny-npm-deploy % npx tsc --init
+
+
+lerna add esbuild@0.8.26 --exact --dev --scope=pristine-jsnote
