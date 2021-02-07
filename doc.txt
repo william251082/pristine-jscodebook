@@ -230,3 +230,7 @@ jbook$ node test.js mynotes.js --port 3050
 local-client$ yarn build
 
 lerna add local-client --scope=local-api
+
+
+tiny-npm-deploy % npm install typescript express @types/express
+tiny-npm-deploy % npx tsc --init
