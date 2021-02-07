@@ -16,10 +16,7 @@ const CellList: FC = () => {
   useEffect(() => {
     fetchCells()
   }, [fetchCells]);
-  // would work but it makes a request on every key change, find another solution
-  useEffect(() => {
-    saveCells()
-  }, [JSON.stringify(cells)]);
+
   const renderedCells = cells.map(
     cell => (
       <Fragment key={cell.id}>
