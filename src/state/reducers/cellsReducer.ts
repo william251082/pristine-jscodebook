@@ -33,7 +33,7 @@ const reducer = produce((state: CellsState = initialState, action: Action): Cell
       }, {} as CellsState['data']);
       return state;
     case ActionType.FETCH_CELLS_ERROR:
-
+      state.error = action.payload;
       return state;
     case ActionType.UPDATE_CELL:
       const { id, content } = action.payload;
